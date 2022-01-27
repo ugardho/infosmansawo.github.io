@@ -148,24 +148,38 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <form>
+
+            <!-- alert -->
+            <div class="alert alert-success alert-dismissible fade show text-center d-none web-alert" role="alert">
+              <h4><strong>Success!</strong></h4> <br/> Pesan telah terkirim.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <!-- akhir alert -->
+
+            <form name="inbox-web">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" />
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" />
+                <input type="email" class="form-control" id="email" aria-describedby="email" name="email"/>
                 <div class="mb-3">
                   <label for="pesan" class="form-label">pesan</label>
-                  <textarea class="form-control" id="pesan" rows="3"></textarea>
+                  <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
                 </div>
-              <button type="submit" class="btn btn-success">kirim</button>
+              <button type="submit" class="btn btn-primary btn-kirim">kirim</button>
+
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
             </form>
           </div>
         </div>
       </div>
     </section>
     <!-- akhir contact -->
+
     
     <!-- footer -->
 <footer class="text-black-50 text-center">
@@ -177,5 +191,34 @@
     <!-- akhir footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- script form google -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxx2BX4uRmJhqOWbeVAFdEKRt3BuI-tqH3ks_8MosWl5hEc2o1ZnDvhnEugPrjGGPP4/exec'
+      const form = document.forms['inbox-web'];
+    const btnKirim = document.querySelector('.btn-kirim');
+    const btnloading = document.querySelector('.btn-loading');
+    const webAlert = document.querySelector('.web-alert');
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        // ketika tombol submit di klik
+        // tampilkan tombol loading, hilangkan kirim
+        btnloading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            // tampilkan tombol kirim, hilangkan loading
+            btnloading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none'); 
+            // tampilkan alert
+            webAlert.classList.toggle('d-none');
+            // reset form
+            form.reset();
+            console.log('Success!', response)
+        })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+    <!-- akhir script google -->
   </body>
 </html>
