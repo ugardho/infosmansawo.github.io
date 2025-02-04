@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+    <!-- CSS Nya BOS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Tata Usaha SMANSAWO</title>
+  </head>
+  <body id="home">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" style="background-color: rgba(5, 165, 165, 0.83)">
+      <div class="container">
+        <a class="navbar-brand" href="#">Sistem Informasi TU</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            <a class="nav-link" href="#">Staf</a>
+            <a class="nav-link" href="#legalisir">Informasi Terkini</a>
+            <a class="nav-link" href="#informasi">Informasi</a>
+            <a class="nav-link" href="#contact">contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- akhir navbar -->
+
+    <!-- Jumbotron -->
+    <section class="jumbotron text-center">
+      <img src="img/LOGO_SMA.png" alt="SMANSAWO" width="200" />
+      <h1 class="display-4">Selamat Datang</h1>
+      <p class="lead">Informasi terkait Tata Usaha SMA Negeri 1 Wonosegoro</p>
+    </section>
+    <!-- akhir jumbotron -->
+
+    <!-- Legalisir Section -->
+    <section id="legalisir">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Menu Legalisir</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Jadwal dan Jam Pelayanan</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Hari</th>
+                  <th>Kepala Sekolah</th>
+                  <th>Jam Legalisir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Senin</td>
+                  <td>Ada</td>
+                  <td>08:00 - 12:00</td>
+                </tr>
+                <tr>
+                  <td>Selasa</td>
+                  <td>Tidak Ada</td>
+                  <td>08:00 - 12:00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Form Pengisian Legalisir -->
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Form Pengisian Legalisir</h3>
+            <form>
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama Pelegalisir</label>
+                <input type="text" class="form-control" id="nama" name="nama">
+              </div>
+              <div class="mb-3">
+                <label for="dokumen" class="form-label">Dokumen</label>
+                <select class="form-control" id="dokumen" name="dokumen">
+                  <option>Ijazah</option>
+                  <option>Rapor</option>
+                  <option>Ijazah & Rapor</option>
+                  <option>Lain-lain</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="tanggal" class="form-label">Tanggal Legalisir</label>
+                <input type="date" class="form-control" id="tanggal" name="tanggal">
+              </div>
+              <button type="submit" class="btn btn-primary">Kirim</button>
+            </form>
+          </div>
+        </div>
+        <!-- Data Legalisir -->
+        <div class="row mt-5">
+          <div class="col">
+            <h3>Data Legalisir</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Dokumen</th>
+                  <th>Tanggal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Ijazah</td>
+                  <td>2024-02-10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Legalisir Section -->
+
+    <!-- Informasi Section -->
+    <section id="informasi">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Informasi</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Informasi Section -->
+
+    <!-- Footer -->
+    <footer class="text-black-50 text-center">
+      <p>Created by <a href="https://www.instagram.com/ugardho_" class="text-black-50 fw-bold">:re</a></p>
+    </footer>
+  </body>
+</html>
